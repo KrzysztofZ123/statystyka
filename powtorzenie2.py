@@ -15,7 +15,7 @@ print('Skośność Bernoulli: ', scs.skew(zmienne_bernoulli))
 # dwumianowy dla 100 prób (k- ile sukcesów, n- ile obserwacji, p- prawdopodobieństwo)
 # jakie jest prawdopodobieństwo uzyskania k sukcesów przy n niezal. obserwacjach z prawdopodobieństwem p
 zmienne_dwumianowe = []
-for i in range(1, 11):
+for i in range(0, ilosc_prob + 1):
     wartosci_dwumianowe = scs.binom.pmf(i, ilosc_prob, p)
     zmienne_dwumianowe.append(wartosci_dwumianowe)
 print()
@@ -24,5 +24,6 @@ print('Średnia dwumianowy: ', np.mean(zmienne_dwumianowe))
 print('Wariancja dwumianowy: ', np.var(zmienne_dwumianowe))
 print('Kurtoza dwumianowy: ', scs.kurtosis(zmienne_dwumianowe))
 print('Skośność dwumianowy: ', scs.skew(zmienne_dwumianowe))
+print('Suma prawdopodobieństw', np.sum(zmienne_dwumianowe))
 
 # Poissona dla 100 prób (prawdopodobieństwo odchyleń od średniej w przedziale czasu)
